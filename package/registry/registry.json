@@ -1,0 +1,28 @@
+{
+    "settings": {
+        "country": {
+            "enable_block": {
+                "kind": "boolean",
+                "label": "Enable only EU countries",
+                "default": false
+            }
+        },
+        "city": {
+            "enable_block": {
+                "kind": "choice",
+                "label":"The city is: ",
+                "kind_options": {
+                    "list_style": "radio",
+                    "values": {
+                        "inside": "inside EU",
+                        "outside": "outside EU"
+                    },
+                    "values_order": {
+                        "inside": 1,
+                        "outside": 2
+                    }
+                }
+            }
+        }
+    }
+}

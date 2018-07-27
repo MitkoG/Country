@@ -1,0 +1,54 @@
+{
+    "navtype": "list_nav",
+    "title": "{{#spotme.tr}}section_title.country{{/spotme.tr}}",
+    "platforms": ["native", "web"],
+    "decoration": "index",
+    "index_key": "{{#value}}{{{firstLetter}}}{{/value}}",
+    "search_template": "{{{title}}}",
+    "render": {
+        "navtype": "personrow_nav",
+        "mapping": {
+            "title": "{{#doc}}{{name}}{{/doc}}",
+            "subtitle" : "{{#doc}}{{code}}{{/doc}}",
+            "img": "{{{couchbase_url}}}/{{{default_db}}}/{{#doc}}{{flag}}{{/doc}}",
+            "placeholder_img": "{{{couchbase_url}}}/{{{default_db}}}/icon.nophoto/file.png"
+        }
+    },
+    "rowHeight": 70,
+    "ds": {
+        "type": "couch",
+        "source": 
+            {
+                "design_doc": "countries",
+                "view": "sorted_by_name",
+                "params":{
+                    "include_docs": true
+                }
+            }
+        ,
+        "reload_on": {
+            "fp_type": [
+                "country"
+            ]
+        }
+    },
+    "platform": {
+        "web": {
+            "route": "/countries",
+            "render": {
+                "row_type": "text_row",
+                "params": {
+                    "mapping": {
+                        "title": "{{{title}}}"
+                    }
+                }
+            },
+            "actions": [{
+                "method": "openDocument",
+                "params": {
+                    "_id": "{{_id}}"
+                }
+            }]
+        }
+    }
+}

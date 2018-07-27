@@ -1,0 +1,26 @@
+{
+    "name": "Country",
+    "platforms": ["native", "web"],
+    "controller": "GenericPageCtrl",
+    "blocks": {
+        "first_block": {
+            "order": 1,
+            "block": "html",
+            "blockOptions": {
+                "title": "Description",
+                "body": "{{{description}}}"
+            }
+        },
+        "second_block": {
+            "order": 1,
+            "block": "html",
+            "blockOptions": {
+                "title": "{{{code}}}",
+                "body": "{{{description}}}"
+            }
+        }
+    },
+    "behaviours": [
+        "model"
+    ]
+ }

@@ -1,0 +1,54 @@
+{
+    "navtype": "list_nav",
+    "title": "{{#spotme.tr}}section_title.city{{/spotme.tr}}",
+    "platforms": ["native", "web"],
+    "decoration": "plain",
+    "search_template": "{{{title}}}",
+    "render": {
+        "navtype": "personrow_nav",
+        "mapping": {
+            "title": "{{#value}}{{name}}{{/value}}",
+            "subtitle" : "{{#value}}{{population}}{{/value}}",
+            "position": "{{#doc}}{{{name}}}{{/doc}}",
+            "img": "{{{couchbase_url}}}/{{{default_db}}}/{{#doc}}{{flag}}{{/doc}}",
+            "placeholder_img": "{{{couchbase_url}}}/{{{default_db}}}/icon.nophoto/file.png"
+        }
+    },
+    "rowHeight": 70,
+    "ds": {
+        "type": "couch",
+        "source": 
+            {
+                "design_doc": "cities",
+                "view": "all",
+                "params":{
+                    "include_docs": true
+                }
+            }
+        ,
+        "reload_on": {
+            "fp_type": [
+                "city"
+            ]
+        }
+    },
+    "platform": {
+        "web": {
+            "route": "/cities",
+            "render": {
+                "row_type": "text_row",
+                "params": {
+                    "mapping": {
+                        "title": "{{{title}}}"
+                    }
+                }
+            },
+            "actions": [{
+                "method": "openDocument",
+                "params": {
+                    "_id": "{{_id}}"
+                }
+            }]
+        }
+    }
+}

@@ -1,0 +1,153 @@
+{
+    "modules": {
+        "country": {
+            "title": "Countries",
+            "icon": "icon-globe",
+            "controllers": {
+                "list": {
+                    "order": 1,
+                    "title": "All Countries",
+                    "route":[
+                        "/event/:eventId/country",
+                        "/event/:eventId/countrys"
+
+                    ],
+                    "controller": "GenericModelListTableCtrl",
+                    "templateUrl": "/static/partials/crud-views/list-generic.html",
+                    "resolvers": {
+                        "default": {
+                            "strategy": "retrieve_all",
+                            "options": {
+                                "fpType": "country"
+                            }
+                        }
+                    },
+                    "routeOptions": {
+                        "contextSensitiveNavKey": "country",
+                        "crudOpts": {
+                            "visibleFields": [
+                                "name",
+                                "code",
+                                "region"
+                            ]
+                        }
+                    }
+                },
+                "create": {
+                    "order": 2,
+                    "title": "Create New",
+                    "route": [
+                        "/event/:eventId/country/new",
+                        "/event/:eventId/countries/new"
+                    ],
+                    "templateUrl": "/static/partials/crud-views/create-generic.html",
+                    "controller": "GenericNewItemCtrl",
+                    "routeOptions": {
+                        "modelFpType": "country"
+                    }
+                },
+                "import": {
+                    "title": "Import Countries",
+                    "order": 3,
+                    "route": "/event/:eventId/coutries/import",
+                    "controller": "ExcelDataImportCtrl",
+                    "templateUrl": "/static/partials/crud-views/import-generic.html",
+                    "routeOptions": {
+                        "dataImportFpType": "country"
+                    }
+                },
+                "view": {
+                    "title": "Countries view",
+                    "order": 4,
+                    "route":[
+                        "/event/:eventId/country/:modelId",
+                        "/event/:eventId/countrys/:modelId"
+                    ],
+                    "controller": "GenericViewItemCtrl",
+                    "templateUrl": "/static/partials/crud-views/view-generic.html",
+                    "resolvers": {
+                        "default": {
+                            "strategy": "retrieve_all",
+                            "options": {
+                                "fpType": "country",
+                                "preferCachedListResponse": true
+                            }
+                        }
+                    },
+                    "routeOptions": {
+                        "crudOpts": {
+                            "fpType": "country"
+                        }
+                    },
+                    "hideNavUnlessActive": true,
+                    "omitNavHrefLink": true
+                },
+                "preferences": {
+                    "order": 5,
+                    "title": "Preferences",
+                    "controller": "GenericPreferencesCtrl",
+                    "templateUrl": "/static/partials/crud-views/edit-module-preferences.html",
+                    "resolvers": {
+                        "default": {
+                            "strategy": "retrieve_settings"
+                        },
+                        "registry": {
+                            "strategy": "retrieve_settings_registry"
+                        },
+                        "i18n": {
+                            "strategy": "retrieve_by_id",
+                            "options": {
+                                "id": "i18n"
+                            }
+                        }
+                    },
+                    "routeOptions": {
+                        "settings": {
+                            "order": 1,
+                            "entries": [
+                                "country"
+                            ]
+                        },
+                        "i18n": {
+                            "order": 2,
+                            "entries": [
+                                "section_title.*"
+                            ]
+                        }
+                    }
+                },
+                "display": {
+                    "order": 7,
+                    "title": "Display Template",
+                    "controller": "BtSystemLoaderController",
+                    "templateUrl": "/api/v1/bstg-template/bt-system-loader.html",
+                    "routeOptions": {
+                        "directive": "fsa-pages",
+                        "includeNavBar": true,
+                        "pages": {
+                            "rules": true
+                        }
+                    },
+                    "sourceUrl": [
+                        "/api/v1/bstg-source/bt-system-loader.js"
+                    ]
+                },
+                "help": {
+                    "displayAsHelpItem": true,
+                    "controller": "HelpContentViewerCtrl",
+                    "templateUrl": "/static/partials/help-content/module-help-content-viewer.html",
+                    "resolvers": {
+                        "helpContent": {
+                            "strategy": "retrieve_module_help_content",
+                            "options": {
+                                "folders": [
+                                    "pdf-country"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

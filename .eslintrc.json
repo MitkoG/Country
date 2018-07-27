@@ -1,0 +1,48 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "jquery": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-console": "off",
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "comma-dangle": [
+            "error",
+            "only-multiline"
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "varsIgnorePattern": "main"
+            }
+        ]
+    },
+    "globals": {
+        "angular": true,
+        "process": true,
+        "BSTG": true,
+        "getBackstageAppModule": true,
+        "fun": true,
+        "_": true
+    }
+}

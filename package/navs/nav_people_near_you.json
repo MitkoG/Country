@@ -1,0 +1,53 @@
+{
+    "navtype": "list_nav",
+    "title": "{{#spotme.tr}}section_title.people_near_you{{/spotme.tr}}",
+    "platforms": ["native", "web"],
+    "decoration": "plain",
+    "search_template": "{{{title}}}",
+    "render": {
+        "navtype": "personrow_nav",
+        "mapping": {
+            "title": "{{#doc}}{{#spotme.trdata}}{{{fname}}}{{/spotme.trdata}} {{#spotme.trdata}}{{{lname}}}{{/spotme.trdata}}{{/doc}}",
+            "subtitle": "{{#doc}}{{#spotme.trdata}}{{{company}}}{{/spotme.trdata}}{{/doc}}",
+            "img": "{{#doc}}{{#spotme.trdata}}{{{photo}}}{{/spotme.trdata}}{{/doc}}",
+            "placeholder_img": "{{{couchbase_url}}}/{{{default_db}}}/icon.nophoto/file.png"
+        }
+    },
+    "rowHeight": 70,
+    "ds": {
+        "type": "javascript",
+        "source": {
+            "path": "people_near_you/filtered-by-participant-city",
+            "params": {
+                "include_docs": true,
+                "startkey": "[\"person\"]",
+                "endkey": "[\"person\", {}]"   
+            },
+            "post_process": true
+        },
+        "reload_on": {
+            "fp_type": [
+                "person"
+            ]
+        }
+    },
+    "platform": {
+        "web": {
+            "route": "/people-near-you",
+            "render": {
+                "row_type": "text_row",
+                "params": {
+                    "mapping": {
+                        "title": "{{{title}}}"
+                    }
+                }
+            },
+            "actions": [{
+                "method": "openDocument",
+                "params": {
+                    "_id": "{{_id}}"
+                }
+            }]
+        }
+    }
+}

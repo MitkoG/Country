@@ -1,0 +1,176 @@
+{
+    "el": {
+        "_to_array": true,
+        "cities_row": {
+            "_id": "cities_row",
+            "navtype": "list_nav",
+            "decoration": "plain",
+            "platforms": ["native", "web"],
+            "ds": {
+                "type": "enum",
+                "source": {
+                    "title": "section_title.city",
+                    "img": "icon.spotman.scan"
+                },
+                "reload_on": {
+                    "notification": "i18n_updated"
+                }
+            },
+            "rowHeight": 39,
+            "render": {
+                "navtype": "spotmanitemrow_nav",
+                "mapping": {
+                    "title": "{{#spotme.tr}}{{{title}}}{{/spotme.tr}} ",
+                    "img": "{{couchbase_url}}/{{default_db}}/{{{img}}}/file.png"
+                }
+            },
+            "on": [{
+                "event": "tap",
+                "target": "spotme://presentnav?{{#urlescape}}{\"_id\":\"nav_cities\"}{{/urlescape}}"
+            }],
+            "platform": {
+                "web": {
+                    "row_type": "spotman_row",
+                    "render": {},
+                    "actions": [{
+                        "method": "presentNav",
+                        "params": {
+                            "nav_id": "nav_cities"
+                        }
+                    }]
+                }
+            }
+        },
+        "countries_row": {
+            "_id": "countries_row",
+            "navtype": "list_nav",
+            "decoration": "plain",
+            "platforms": ["native", "web"],
+            "ds": {
+                "type": "enum",
+                "source": {
+                    "title": "section_title.country_sorted",
+                    "img": "icon.spotman.scan"
+                },
+                "reload_on": {
+                    "notification": "i18n_updated"
+                }
+            },
+            "rowHeight": 39,
+            "render": {
+                "navtype": "spotmanitemrow_nav",
+                "mapping": {
+                    "title": "{{#spotme.tr}}{{{title}}}{{/spotme.tr}} ",
+                    "img": "{{couchbase_url}}/{{default_db}}/{{{img}}}/file.png"
+                }
+            },
+            "on": [{
+                "event": "tap",
+                "target": "spotme://presentnav?{{#urlescape}}{\"_id\":\"nav_countries\"}{{/urlescape}}"
+            }],
+            "platform": {
+                "web": {
+                    "row_type": "spotman_row",
+                    "render": {},
+                    "actions": [{
+                        "method": "presentNav",
+                        "params": {
+                            "nav_id": "nav_countries"
+                        }
+                    }]
+                }
+            }
+        },
+        "countries_all_row": {
+            "_id": "countries_all_row",
+            "navtype": "list_nav",
+            "decoration": "plain",
+            "platforms": ["native", "web"],
+            "ds": {
+                "type": "enum",
+                "source": {
+                    "title": "section_title.country",
+                    "img": "icon.spotman.scan"
+                },
+                "reload_on": {
+                    "notification": "i18n_updated"
+                }
+            },
+            "rowHeight": 39,
+            "render": {
+                "navtype": "spotmanitemrow_nav",
+                "mapping": {
+                    "title": "{{#spotme.tr}}{{{title}}}{{/spotme.tr}} ",
+                    "img": "{{couchbase_url}}/{{default_db}}/{{{img}}}/file.png"
+                }
+            },
+            "on": [{
+                "event": "tap",
+                "target": "spotme://presentnav?{{#urlescape}}{\"_id\":\"nav_countries_all\"}{{/urlescape}}"
+            }],
+            "platform": {
+                "web": {
+                    "row_type": "spotman_row",
+                    "render": {},
+                    "actions": [{
+                        "method": "presentNav",
+                        "params": {
+                            "nav_id": "nav_countries_all"
+                        }
+                    }]
+                }
+            }
+        },
+        "people_near_you": {
+            "_id": "people_near_you_row",
+            "navtype": "list_nav",
+            "decoration": "plain",
+            "platforms": ["native", "web"],
+            "ds": {
+                "type": "enum",
+                "source": {
+                    "title": "section_title.people_near_you",
+                    "img": "icon.spotman.people"
+                },
+                "reload_on": {
+                    "notification": "i18n_updated"
+                }
+            },
+            "rowHeight": 39,
+            "render": {
+                "navtype": "spotmanitemrow_nav",
+                "mapping": {
+                    "title": "{{#spotme.tr}}{{{title}}}{{/spotme.tr}} ",
+                    "img": "{{couchbase_url}}/{{default_db}}/{{{img}}}/file.png"
+                }
+            },
+            "on": [{
+                "event": "tap",
+                "target": "spotme://presentnav?{{#urlescape}}{\"_id\":\"nav_people_near_you\"}{{/urlescape}}"
+            }],
+            "platform": {
+                "web": {
+                    "row_type": "spotman_row",
+                    "render": {},
+                    "actions": [{
+                        "method": "presentNav",
+                        "params": {
+                            "nav_id": "nav_people_near_you"
+                        }
+                    }]
+                }
+            }
+        },
+        "universal_search_row": {
+            "platform": {
+                "web": {
+                    "render": {
+                        "groups": {
+                            "person": "section_title.people"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

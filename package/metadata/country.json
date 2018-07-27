@@ -1,0 +1,43 @@
+{
+    "country": {
+        "name": {
+            "label": "Country",
+            "kind": "text"
+        },
+        "code": {
+            "label": "Country code",
+            "kind": "number"
+        },
+        "region": {
+            "kind": "choice",
+            "kind_options": {
+                "list_style": "select",
+                "values": {
+                    "europe": "Europe",
+                    "outside": "Outside Europe"
+                },
+                "values_order": {
+                    "europe": 1,
+                    "outside": 2
+                }
+            }
+        },
+        "flag": {
+            "label": "Flag",
+            "kind": "external",
+            "kind_options": {
+                "type": "icon",
+                "single_doc": true,
+                "id_field": "fp_asset"
+            }
+        },
+        "religion": {
+            "label": "Religion",
+            "kind": "text"
+        },
+        "is_member_of_eu": {
+                "kind": "boolean",
+                "default": "false"
+        }
+    }
+}

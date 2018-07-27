@@ -1,0 +1,12 @@
+{
+    "blocks": {
+        "country-block": {
+            "family": "model:country",
+            "name": "Country",
+            "icon": "icon-user",
+            "controller": "Country2BlockCtrl",
+            "sourceUrl": "fstg-blocks://country/country-ctrl.js",
+            "templateUrl": "fstg-blocks://country/country.html"
+        }
+    }
+}

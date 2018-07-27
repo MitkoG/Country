@@ -1,0 +1,28 @@
+{
+    "section_title": {
+        "country": {
+            "en": "Country"
+        },
+        "city": {
+            "en": "City"
+        },
+        "country_sorted": {
+            "en": "Country: sorted"
+        },
+        "population": {
+            "en": "Population: "
+        },
+        "people_near_you": {
+            "en": "People near you"
+        },
+        "view_country": {
+            "en": "View country"
+        },
+        "country_information": {
+            "en": "Country information"
+        },
+        "details_hidden": {
+            "en": "Hidden details"
+        }
+    }
+}

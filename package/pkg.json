@@ -1,0 +1,94 @@
+{
+    "name": "country",
+    "info": {
+        "description": "",
+        "owner": ""
+    },
+    "dependencies": {},
+    "operations": {
+        "metadata": {
+            "action": "save_as_doc",
+            "doc": "country-{{filename}}-bit",
+            "fields": {
+                "fp_owner": "private",
+                "fp_type": "metadata-bit"
+            }
+        },
+        "blueprint": {
+            "action": "save_as_doc",
+            "doc": "country-{{filename}}-bit",
+            "fields": {
+                "fp_owner": "private",
+                "fp_type": "blueprint-bit"
+            }
+        },
+        "i18n": {
+            "action": "save_as_doc",
+            "doc": "country-{{filename}}-bit",
+            "fields": {
+                "fp_owner": "private",
+                "fp_type": "i18n-bit"
+            }
+        },
+        "registry": {
+            "action": "save_as_doc",
+            "doc": "country-{{filename}}-bit",
+            "fields": {
+                "fp_type": "registry-bit",
+                "fp_owner": "private"
+            }
+        },
+        "bstg-docs": {
+            "action": "attach",
+            "attachment_name": "{{filepath}}",
+            "doc": "_design/backstage_help_content"
+        },
+        "navs": {
+            "action": "save_as_doc",
+            "doc": "country-{{filename}}-bit",
+            "fields": {
+                "fp_owner": "private",
+                "fp_type": "nav-bit:{{filename}}",
+                "fp_subtype": "{{filename}}"
+            }
+        },
+        "ddocs": {
+            "action": "extend_doc",
+            "doc": "_design/{{first}}",
+            "path": "{{rest}}/{{filename}}"
+        },
+        "appscripts": {
+            "action": "extend_doc",
+            "doc": "appscripts",
+            "path": "{{dirpath}}/{{filename}}"
+        },
+        "actions": {
+            "action": "save_as_doc",
+            "doc": "country-{{filename}}-action-bit",
+            "fields": {
+                "fp_owner": "private",
+                "fp_type": "nav-bit:actions",
+                "fp_subtype": "actions"
+            }
+        },
+        "fstg-pages": {
+            "action": "save_as_doc",
+            "doc": "fstg-page-{{filename}}-bit",
+            "fields": {
+                "fp_subtype": "fstg-page-{{filename}}",
+                "fp_type": "fstg-page-bit:{{filename}}",
+                "fp_owner": "global",
+                "fp_base_bit": "true"
+            }
+        },
+        "fstg-block-defs": {
+            "action": "extend_doc",
+            "doc": "frontstage-blocks"
+        },
+        "fstg-blocks": {
+            "action": "attach",
+            "doc": "_design/frontstage-blocks",
+            "attachment_name": "{{filepath}}"
+        }
+    }
+}

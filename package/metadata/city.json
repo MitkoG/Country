@@ -1,0 +1,49 @@
+{
+    "city": {
+        "name": {
+            "label": "City",
+            "kind": "text"
+        },
+        "postalCode": {
+            "label": "Postal code",
+            "kind": "number"
+        },
+        "population": {
+            "label": "Population",
+            "kind": "number"
+        },
+        "state": {
+            "label": "State/Province",
+            "kind": "text"
+        },
+        "country": {
+          "label": "Country",
+          "order": 10,
+          "kind": "external",
+          "kind_options": {
+            "type": "country",
+            "single_doc": true,
+            "id_field": "fp_ext_id"
+          }
+        },
+        "country_link_id": {
+          "label": "Country by id",
+          "order": 11,
+          "kind": "external",
+          "kind_options": {
+            "type": "country",
+            "single_doc": true,
+            "id_field": "_id"
+          }
+        },
+        "flag": {
+            "label": "Icon",
+            "kind": "external",
+            "kind_options": {
+                "type": "icon",
+                "single_doc": true,
+                "id_field": "fp_asset"
+            }
+        }
+    }
+}
