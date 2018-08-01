@@ -132,6 +132,19 @@
                         "/api/v1/bstg-source/bt-system-loader.js"
                     ]
                 },
+                "population": {
+                    "order": 8,
+                    "title": "Population",
+                    "route": "/event/:eventId/countries/population",
+                    "fullscreen": {
+                        "available": true
+                    },
+                    "sourceUrl": [
+                        "/api/v1/bstg-source/populationController.js"
+                    ],
+                    "controller": "PopulationCtrl",
+                    "templateUrl": "/api/v1/bstg-template/population-cities.html"
+                },
                 "help": {
                     "displayAsHelpItem": true,
                     "controller": "HelpContentViewerCtrl",

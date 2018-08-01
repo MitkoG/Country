@@ -1,7 +1,6 @@
 {
     "blocks": {
         "country-block": {
-            "family": "model:country",
             "name": "Country",
             "icon": "icon-user",
             "controller": "Country2BlockCtrl",

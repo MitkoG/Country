@@ -11,14 +11,16 @@ function main(ctx, params, done) {
             return done(err);
         }
 
-        var actPax = ctx.event.actPax.toObject();
-        var participants = result.rows;
+        if (result && result.rows) {
+            var actPax = ctx.event.actPax.toObject();
+            var participants = result.rows;
         
-        var peopleNearYou = _.filter(participants, 
+            var peopleNearYou = _.filter(participants, 
             function(participant){
                 return (actPax._id !== participant.id && actPax.city === participant.doc.city)
             });
         
-        done(null, peopleNearYou);
+            done(null, peopleNearYou);
+        }
     });
 }

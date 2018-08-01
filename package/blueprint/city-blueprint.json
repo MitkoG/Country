@@ -12,6 +12,9 @@
                         "/event/:eventId/citys"
                     ],
                     "controller": "GenericModelListTableCtrl",
+                    "sourceUrl": [
+                        "/api/v1/bstg-source/exportCountryDataController.js"
+                    ],
                     "templateUrl": "/static/partials/crud-views/list-generic.html",
                     "resolvers": {
                         "default": {
@@ -28,7 +31,11 @@
                                 "name",
                                 "postalCode",
                                 "state"
-                            ]
+                            ],
+                            "customColumns": [{
+                                "label": "Export Cities",
+                                "cellTemplateUrl": "/api/v1/bstg-template/export-country-cell.html"
+                            }]
                         }
                     }
                 },

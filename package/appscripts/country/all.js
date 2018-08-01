@@ -10,11 +10,14 @@ function main(ctx, params, done) {
         }
 
         if (ctx.event.settings.get('country.enable_block') === true) {
-            var countries_object = res.rows
-            var is_member_of_eu = _.filter(countries_object, 
+            if (res && res.rows) {
+                var countries_object = res.rows
+                var is_member_of_eu = _.filter(countries_object, 
                 function(country){ return country.doc.is_member_of_eu == true; });
 
-            done(null, is_member_of_eu);
+                done(null, is_member_of_eu);
+            }
+            
         } else {
             done(null, res);
         }

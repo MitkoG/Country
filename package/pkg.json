@@ -89,6 +89,16 @@
             "action": "attach",
             "doc": "_design/frontstage-blocks",
             "attachment_name": "{{filepath}}"
+        },
+        "bstg-template": {
+            "action": "attach",
+            "doc": "_design/backstage_templates",
+            "attachment_name": "{{filepath}}"
+        },
+        "bstg-source": {
+            "action": "attach",
+            "doc": "_design/backstage_sources",
+            "attachment_name": "{{filepath}}"
         }
     }
 }

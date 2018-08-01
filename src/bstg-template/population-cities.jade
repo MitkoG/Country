@@ -1,0 +1,8 @@
+.list-group-item
+      table(ng-controller='PopulationCtrl', border='1')
+        tr
+          th Country
+          th Population
+        tr(ng-repeat='key in countries')
+          td(ng-repeat='column in key')
+            | {{ column }}
