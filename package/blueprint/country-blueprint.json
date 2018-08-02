@@ -140,7 +140,8 @@
                         "available": true
                     },
                     "sourceUrl": [
-                        "/api/v1/bstg-source/populationController.js"
+                        "/api/v1/bstg-source/populationController.js",
+                        "/api/v1/bstg-source/highcharts.js"
                     ],
                     "controller": "PopulationCtrl",
                     "templateUrl": "/api/v1/bstg-template/population-cities.html"
