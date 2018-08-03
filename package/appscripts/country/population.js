@@ -1,5 +1,6 @@
 function main(ctx, params, done) {
     var _ = require('lib/underscore');
+    console.log('branch vrountry1.1');
     
     ctx.event.db.view('countries', 'population_all_countries', {
         reduce: true,
@@ -22,7 +23,8 @@ function main(ctx, params, done) {
                 var result = _.pluck(res.rows, 'key');
 
                 for (let index = 0; index < result.length; index++) {
-                    var countryFpExtId = _.find(countriesObject, function(country){ return result[index] == country.doc.fp_ext_id; });
+                    var countryFpExtId = _.find(countriesObject, 
+                        function(country){ return result[index] == country.doc.fp_ext_id; });
                     res.rows[index].key = countryFpExtId.doc.name;
                 }
             
